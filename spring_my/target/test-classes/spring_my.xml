@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+<!--    <component-scan base-package="com.wcr.spring"/>-->
+<!--    <bean name="userDao" class="com.wcr.spring.beans.dao.UserDao"/>-->
+<!--    <bean name="userService" class="com.wcr.spring.beans.Service.UserService"/>-->
+    <bean name="aservice" class="com.wcr.spring.Service.Aservice">
+        <property name="bservice" ref="bservice"/>
+    </bean>
+    <bean name="bservice" class="com.wcr.spring.Service.Bservice">
+        <property name="aservice" ref="aservice"/>
+    </bean>
+</beans>

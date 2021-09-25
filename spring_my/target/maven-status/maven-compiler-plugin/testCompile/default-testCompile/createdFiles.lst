@@ -1,0 +1,15 @@
+com\wcr\spring\Service\Bservice.class
+com\wcr\spring\advice\AdminAdvice.class
+com\wcr\spring\event\Mylisten.class
+com\wcr\spring\event\MyEvent.class
+com\wcr\spring\Service\IAdminService.class
+com\wcr\spring\advice\AdviceTest.class
+com\wcr\spring\Service\AdminService.class
+com\wcr\spring\event\Closelisten.class
+com\wcr\spring\Service\Aservice.class
+com\wcr\spring\interceptor\UserServiceInterCeptor.class
+com\wcr\spring\dao\AdminDao.class
+com\wcr\spring\SpringTest.class
+com\wcr\spring\dao\UserDao.class
+com\wcr\spring\event\ApplicationReflesh.class
+com\wcr\spring\Service\UserService.class

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	         http://www.springframework.org/schema/beans/spring-beans.xsd
+		 http://www.springframework.org/schema/context">
+
+    <bean id="postProcessBeforeInstantiation" class="com.wcr.spring.aop.framework.autoproxy.postProcessBeforeInstantiation"/>
+    <bean id="beforeAdvice" class="com.wcr.spring.advice.AdminAdvice"/>
+    <bean id="methodInterceptor" class="com.wcr.spring.aop.framework.adapter.MethodBeforeAdviceInterceptor" scope="singleton">
+        <property name="advice" ref="beforeAdvice"/>
+    </bean>
+    <bean id="pointcutAdvisor" class="com.wcr.spring.aop.aspecj.AspectJExpressionPointcutAdvisor" scope="singleton">
+        <property name="expression" value="execution(* com.wcr.spring.Service.IAdminService.*(..))"/>
+        <property name="advice" ref="methodInterceptor"/>
+    </bean>
+    <bean class="com.wcr.spring.beans.factory.xml.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:token.properties"/>
+    </bean>
+
+    <bean id="userDao" class="com.wcr.spring.dao.AdminDao"/>
+    <bean id="adminService" class="com.wcr.spring.Service.AdminService">
+        <property name="token" value="${token}"/>
+        <property name="adminDao" ref="userDao"/>
+    </bean>
+
+
+</beans>

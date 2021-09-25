@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+
+<!--    <bean id="mypost" class="com.wcr.spring.beans.mybeanfatorypost"/>-->
+<!--    <bean id="userDao" class="com.wcr.spring.beans.dao.UserDao">-->
+<!--        <property name="name" value="hehe"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="userService" class="com.wcr.spring.beans.Service.UserService">-->
+<!--&lt;!&ndash;        <property name="userDao" ref="userDao"/>&ndash;&gt;-->
+<!--    </bean>-->
+<!--    <bean id="factorymy" class="com.wcr.spring.beans.factorymy" scope="singleton"/>-->
+<!--    <bean id="mylisen" class="com.wcr.spring.beans.Mylisten" scope="singleton"/>-->
+<!--    <bean id="ApplicationReflesh" class="com.wcr.spring.ApplicationReflesh"/>-->
+<!--    <bean id="Closelisten" class="com.wcr.spring.Closelisten"/>-->
+<!--    <bean id="TestAop" class="com.wcr.spring.beans.TestAop"/>-->
+<!--    <bean id="postProcessBeforeInstantiation" class="com.wcr.spring.aop.framework.autoproxy.postProcessBeforeInstantiation"/>-->
+<!--    <bean id="beforeAdvice" class="com.wcr.spring.AdviceTest"/>-->
+<!--    <bean id="methodInterceptor" class="com.wcr.spring.aop.framework.adapter.MethodBeforeAdviceInterceptor" scope="singleton">-->
+<!--        <property name="advice" ref="beforeAdvice"/>-->
+<!--    </bean>-->
+<!--    <bean id="pointcutAdvisor" class="com.wcr.spring.aop.aspecj.AspectJExpressionPointcutAdvisor" scope="singleton">-->
+<!--        <property name="expression" value="execution(* com.wcr.spring.beans.TApi.*(..))"/>-->
+<!--        <property name="advice" ref="methodInterceptor"/>-->
+<!--    </bean>-->
+    <bean id="A" class="com.wcr.spring.A">
+        <property name="b" ref="B"/>
+    </bean>
+    <bean id="B" class="com.wcr.spring.B">
+        <property name="a" ref="A"/>
+    </bean>
+</beans>
