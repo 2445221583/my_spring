@@ -1,1 +1,2 @@
 # my_spring
+my_spring是一个仿照spring源码编写的一个小型的spring框架，实现了基本的ioc功能，有较为完备的spring初始化过程，以及bean的生命周期，支持注解注入以及xml注入，仿照spring提供了bean的拓展机制。也实现了spring中的aop功能，能对类进行增强。使用了三级缓存来解决循环依赖的问题。
